@@ -1,6 +1,6 @@
 <?php
 
-include_once("autoload.php");
+include_once("_autoload.php");
 
 class InstagramUserWebParserCollection {
 
@@ -8,7 +8,7 @@ class InstagramUserWebParserCollection {
 	protected $collection = array();
 
 	public function __construct($list = "urls.list") {
-		if(file_exists($list)) {
+		if(is_string($list) && file_exists($list)) {
 			$this->urls = file($list);
 		}
 		if(is_array($list)) {
